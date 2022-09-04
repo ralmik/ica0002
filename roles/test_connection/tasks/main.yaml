@@ -1,0 +1,2 @@
+- name: Nasible ping module
+  ansible.builtin.ping:
