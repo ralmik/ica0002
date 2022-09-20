@@ -15,4 +15,4 @@
 - name: Get agama
   get_url:
     url: https://raw.githubusercontent.com/hudolejev/agama/master/agama.py
-    dest: /opt/agama/Dockerfile
+    dest: /opt/agama

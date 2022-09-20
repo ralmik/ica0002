@@ -1,0 +1,19 @@
+- name: Install uwsgi
+  apt:
+    name: uwsgi
+
+- name: Install uwsgi-plugin-python3
+  apt:
+    name: uwsgi-plugin-python3
+
+- name: Start and enable uwsgi
+  ansible.builtin.service:
+    name: uwsgi
+    state: started
+    enabled: yes
+
+- name: Change agama config
+  ansible.builtin.copy:
+    src: agama.ini
+    dest: /etc/uwsgi/apps-enabled/agama.ini
+  notify: Restart uwsgi
