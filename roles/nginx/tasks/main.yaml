@@ -2,15 +2,16 @@
   ansible.builtin.apt:
     name: nginx
 
-- name: Start and enable nginx
-  ansible.builtin.service:
-    name: nginx
-    state: started
-    enabled: yes
-
 - name: Change nginx config
   ansible.builtin.copy:
     src: default
     dest: /etc/nginx/sites-enabled/default
   notify:
     - Restart nginx
+
+- name: Start and enable nginx
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: yes
+
