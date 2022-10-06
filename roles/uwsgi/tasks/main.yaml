@@ -13,7 +13,7 @@
     enabled: yes
 
 - name: Change agama config
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: agama.ini
     dest: /etc/uwsgi/apps-enabled/agama.ini
   notify: Restart uwsgi

@@ -11,6 +11,7 @@
 - name: Install application dependencies
   ansible.builtin.apt:
     name: python3-flask-sqlalchemy
+    name: python3-pymysql
 
 - name: Get agama
   get_url:
