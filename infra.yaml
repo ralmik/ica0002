@@ -20,7 +20,8 @@
     become: yes
 
   - name: Bind9
-    hosts: db_servers
+    hosts: all
     become: yes
     roles:
       - bind9
+      - resolv

@@ -2,6 +2,28 @@
   apt:
     name: bind9
 
+- name: Change bind named.conf.options config  
+  ansible.builtin.template:
+    dest: /etc/bind/named.conf.options
+    src: named.conf.options.j2
+  notify:
+    - Restart bind9
+    
+- name: Change bind9 "named.conf.local" config
+  ansible.builtin.template:
+    src: named.conf.local.j2
+    dest: /etc/bind/named.conf.local
+  notify:
+    - Restart bind9
+    
+- name: Change bind9 database
+  ansible.builtin.template:
+    src: db.ralf.rm.j2
+    dest: /var/lib/bind/db.ralf.rm
+  notify:
+    - Restart rndc
+
+  
 - name: Start and enable bind9
   ansible.builtin.service:
     name: bind9

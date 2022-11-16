@@ -1,4 +1,4 @@
-mysql_host: 192.168.43.35
+mysql_host: "{{ hostvars['ralmik-2']['ansible_default_ipv4']['address'] }}"
 mysql_database: agama
 mysql_user: agama
 mysql_password: !vault |
@@ -9,3 +9,15 @@ mysql_password: !vault |
           3165626463613765330a633266383162653566336161613264366439313731613261646538636364
           6566
 
+forwarders:
+  - 1.1.1.1
+  - 1.0.0.1
+  - 8.8.8.8
+  - 8.8.4.4
+  
+query_allow:
+  - 192.168.42.0/24
+  - 127.0.0.0/8
+  - 192.168.43.0/24
+  
+domain: ralf.rm
