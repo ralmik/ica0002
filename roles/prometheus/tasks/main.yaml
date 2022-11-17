@@ -1,0 +1,9 @@
+- name: Install prometheus
+  apt:
+    name: prometheus
+
+- name: Start and enable prometheus
+  ansible.builtin.service:
+    name: prometheus
+    state: started
+    enabled: yes

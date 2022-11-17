@@ -1,8 +1,11 @@
-ralmik-1 ansible_host=193.40.156.67 ansible_port=6322 ansible_user=ubuntu 
-ralmik-2 ansible_host=193.40.156.67 ansible_port=34322 ansible_user=ubuntu
+ralmik-1 ansible_host=193.40.156.67 ansible_port=4022 ansible_user=ubuntu 
+ralmik-2 ansible_host=193.40.156.67 ansible_port=31122 ansible_user=ubuntu
 
 [web_servers]
 ralmik-1
 
 [db_servers]
+ralmik-2
+
+[dns_servers]
 ralmik-2
